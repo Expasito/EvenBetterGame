@@ -18,12 +18,7 @@ import java.util.Random;
 public class GUI {
     
     public static void main(String[] args) throws InterruptedException {
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                createAndShowGUI(); 
-//            }
-//        });
-    	JFrame f = new JFrame("Swing Paint Demo");
+    	JFrame f = new JFrame("Game");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MyPanel game = new MyPanel();
         f.add(game);
@@ -40,24 +35,6 @@ public class GUI {
         
     }
 
-    private static void createAndShowGUI() {
-        System.out.println("Created GUI on EDT? "+
-        SwingUtilities.isEventDispatchThread());
-        JFrame f = new JFrame("Swing Paint Demo");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        MyPanel game = new MyPanel();
-        f.add(game);
-        f.pack();
-        f.setVisible(true);
-        int test=1;
-        game.update();
-        Scanner sc = new Scanner(System.in);
-        
-//        game.update();
-        
-        
-        
-    } 
 }
 
 class MyPanel extends JPanel {
@@ -67,8 +44,6 @@ class MyPanel extends JPanel {
 	Square four = new Square();
 	Square five = new Square();
 	Square six = new Square();
-//	public static List<Square> all = new ArrayList<Square>();
-//	all.add(one);
 	public static List<Square> all = new ArrayList<Square>();
 	
 
@@ -76,9 +51,6 @@ class MyPanel extends JPanel {
 
     public MyPanel() {
     	Random rand = new Random();
-    	
-//    	one.setX(100);
-//    	one.setY(100);
     	all.add(one);
     	all.add(two);
     	all.add(three);
